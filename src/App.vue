@@ -1,9 +1,5 @@
 <template>
-  <header>
-    <div>
-      <HelloWorld />
-    </div>
-  </header>
+  <HelloWorld />
 </template>
 
 <script setup lang="ts">
