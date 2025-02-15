@@ -1,9 +1,9 @@
 <template>
   <div class="d-grid container gap-2">
-    <template v-for="link in links">
+    <template :key="link" v-for="link in links">
       <div style="cursor: pointer; max-height: 10em;" class="card" @click="open(link.link)">
         <div class="card-body text-center">
-          <img :src="`/src/assets/${link.icon}.svg`" style="max-height: 8em; max-width: -webkit-fill-available;" />
+          <img :src="`/${link.icon}.svg`" style="max-height: 8em; max-width: -webkit-fill-available;" />
         </div>
       </div>
     </template>
