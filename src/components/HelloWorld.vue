@@ -3,7 +3,7 @@
     <template :key="link" v-for="link in links">
       <div style="cursor: pointer; max-height: 10em;" class="card" @click="open(link.link)">
         <div class="card-body text-center">
-          <img :src="`/${link.icon}.svg`" style="max-height: 8em; max-width: -webkit-fill-available;" />
+          <img :src="getImageUrl(`${link.icon}`)" style="max-height: 8em; max-width: -webkit-fill-available;" />
         </div>
       </div>
     </template>
@@ -11,6 +11,10 @@
 </template>
 
 <script setup lang="ts">
+
+const getImageUrl = (image: string) => {
+  return new URL(`@/assets/${image}.svg`, import.meta.url).href
+}
 
 const open = (link: string) => {
   window.open(`https://${link}`, '_blank');
