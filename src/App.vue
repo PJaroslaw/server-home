@@ -1,7 +1,7 @@
 <template>
-  <HelloWorld />
+  <MyServer />
 </template>
 
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import MyServer from './components/MyServer.vue'
 </script>

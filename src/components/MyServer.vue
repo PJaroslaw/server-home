@@ -1,3 +1,5 @@
+<style lang="css" scoped></style>
+
 <template>
   <div class="d-grid container gap-2">
     <template :key="link" v-for="link in links">
@@ -11,6 +13,8 @@
 </template>
 
 <script setup lang="ts">
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+document.body.classList.add(prefersDark ? 'dark' : 'light');
 
 const open = (link: string) => {
   window.open(`https://${link}`, '_blank');
