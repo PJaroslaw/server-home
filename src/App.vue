@@ -1,9 +1,9 @@
 <template>
   <MyServer class="d-none"/>
-  <WP />
+  <MainComponent />
 </template>
 
 <script setup lang="ts">
 import MyServer from './components/MyServer.vue';
-import WP from './components/wp.vue';
+import MainComponent from './components/MainComponent.vue';
 </script>

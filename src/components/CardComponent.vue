@@ -1,6 +1,6 @@
 <template>
     <div class="col">    
-        <div class="card rounded-4 bg-dark border-0 overflow-hidden" @click="open(link)" style="cursor: pointer;" :title="link.title">
+        <div class="card rounded-4 bg-dark border-0 overflow-hidden" @click="open(link.iframe, link.link)" style="cursor: pointer;" :title="link.title">
             <img height="150" :src="`${link.icon}`" class="card-img p-3">
         </div>
     </div>
@@ -10,15 +10,14 @@
 
 //Props
     defineProps({
-        link: { type: Object, required: true }
+        link: { type: Object , required: true }
     });
     
 //Emits
     const emits = defineEmits(['cardClick']);
 
-//
-	const open = (link: any) => {
-        emits('cardClick', { iframe: link.canOpenInIframe, link: `https://${link.link}` });
+	const open = (iframe: boolean, link: string) => {
+        emits('cardClick', { iframe: iframe, link: `https://${link}` });
 	}
 </script>
 
