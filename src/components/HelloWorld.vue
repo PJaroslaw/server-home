@@ -3,7 +3,7 @@
     <template :key="link" v-for="link in links">
       <div style="cursor: pointer; max-height: 10em;" class="card" @click="open(link.link)">
         <div class="card-body text-center">
-          <img :src="getImageUrl(`${link.icon}`)" style="max-height: 8em; max-width: -webkit-fill-available;" />
+          <img :src="`${link.icon}`" style="max-height: 8em; max-width: -webkit-fill-available;" />
         </div>
       </div>
     </template>
@@ -12,10 +12,6 @@
 
 <script setup lang="ts">
 
-const getImageUrl = (image: string) => {
-  return new URL(`@/assets/${image}.svg`, import.meta.url).href
-}
-
 const open = (link: string) => {
   window.open(`https://${link}`, '_blank');
 }
@@ -23,38 +19,31 @@ const open = (link: string) => {
 const links = {
   plex: {
     link: 'plex.pjarek.duckdns.org',
-    title: 'Plex',
-    icon: 'plex-logo'
+    icon: new URL("@/assets/plex-logo.svg", import.meta.url).href
   },
   hass: {
     link: 'hass.pjarek.duckdns.org',
-    title: 'Home Assistant',
-    icon: 'home-assistant-logo-white'
+    icon: new URL("@/assets/home-assistant-logo-white.svg", import.meta.url).href
   },
   ovrsr: {
     link: 'overseerr.pjarek.duckdns.org',
-    title: 'Overseerr',
-    icon: 'overseerr-logo-full'
+    icon: new URL("@/assets/overseerr-logo-full.svg", import.meta.url).href
   },
   rdr: {
     link: 'arr.pjarek.duckdns.org/radarr',
-    title: 'Radarr',
-    icon: 'radarr-logo-full'
+    icon: new URL("@/assets/radarr-logo-full.svg", import.meta.url).href
   },
   snr: {
     link: 'arr.pjarek.duckdns.org/sonarr',
-    title: 'Sonarr',
-    icon: 'sonarr-logo'
+    icon: new URL("@/assets/sonarr-logo.svg", import.meta.url).href
   },
   prwlr: {
     link: 'arr.pjarek.duckdns.org/prowlarr',
-    title: 'Prowlarr',
-    icon: 'prowlarr-logo'
+    icon: new URL("@/assets/prowlarr-logo.svg", import.meta.url).href
   },
   trns: {
     link: 'arr.pjarek.duckdns.org/transmissions',
-    title: 'Transmission',
-    icon: 'transmission-logo'
+    icon: new URL("@/assets/transmission-logo.svg", import.meta.url).href
   },
 };
 </script>
