@@ -1,5 +1,3 @@
-<style lang="css" scoped></style>
-
 <template>
   <div class="d-grid container gap-2">
     <template :key="link" v-for="link in links">
