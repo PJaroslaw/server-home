@@ -52,8 +52,8 @@
 
 <script setup lang="ts">
     import { onMounted, ref } from 'vue';
-    import MyServer from './MyServer.vue';
-    import Card from './card.vue';
+    // import MyServer from './MyServer.vue';
+    import Card from './CardComponent.vue';
     import { links } from '@/scripts/shared';
     
 //Refs
@@ -63,12 +63,16 @@
 
 //Helper Methods
     const changeTheme = () => {        
-        const elem: HTMLHtmlElement = document.querySelector('html');
+        const elem: HTMLHtmlElement | null = document.querySelector('html');
         theme.value = theme.value === 'dark' ? 'light' : 'dark';
         elem?.setAttribute('data-bs-theme', theme.value);
     }
 
-    const onCardClick = (e) => {
+    type CardEvent = {
+        iframe: boolean
+        link: string
+    };
+    const onCardClick = (e: CardEvent) => {
         if(e.iframe){ 
             showIframe.value = true;
             iframeSrc.value = e.link;
@@ -79,7 +83,7 @@
 
 //Mounted
     onMounted(() => {
-        const elem: HTMLHtmlElement = document.querySelector('html');
+        const elem: HTMLHtmlElement | null = document.querySelector('html');
         theme.value = elem?.getAttribute('data-bs-theme');
     });
 </script>
