@@ -15,7 +15,7 @@ export const links = {
     title: 'Home Assistant',
     link: 'hass.pjarek.duckdns.org',
     icon: new URL('@/assets/home-assistant-logo-white.svg', import.meta.url).href,
-    iframe: true,
+    iframe: false,
   },
   msgs: {
     title: 'Messenger',
