@@ -1,5 +1,5 @@
 <template>
-  <MyServer class="d-none"/>
+  <MyServer class="d-none" />
   <MainComponent />
 </template>
 

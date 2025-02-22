@@ -8,7 +8,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-window.bootstrap = bootstrap;
+window.bootstrap = bootstrap
 
 const app = createApp(App)
 
