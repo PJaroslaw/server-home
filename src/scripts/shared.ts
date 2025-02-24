@@ -1,4 +1,10 @@
 export const links = {
+  iTools: {
+    title: 'itTools',
+    link: 'it-tools.pjarek.duckdns.org',
+    icon: new URL('@/assets/it-tools-logo.svg', import.meta.url).href,
+    iframe: true,
+  },
   plex: {
     title: 'Plex',
     link: 'plex.pjarek.duckdns.org',
