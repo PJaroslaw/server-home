@@ -17,12 +17,6 @@ export const links = {
     icon: new URL('@/assets/overseerr-logo-full.svg', import.meta.url).href,
     iframe: true,
   },
-  hass: {
-    title: 'Home Assistant',
-    link: 'hass.pjarek.duckdns.org',
-    icon: new URL('@/assets/home-assistant-logo-white.svg', import.meta.url).href,
-    iframe: false,
-  },
   msgs: {
     title: 'Messenger',
     link: 'facebook.com/messages/t/',
