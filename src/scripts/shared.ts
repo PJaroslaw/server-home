@@ -6,15 +6,15 @@ export const links = {
     iframe: true,
   },
   plex: {
-    title: 'Plex',
-    link: 'plex.pjarek.com',
-    icon: new URL('@/assets/plex-logo.svg', import.meta.url).href,
+    title: 'Jellyfin',
+    link: 'jellyfin.pjarek.com',
+    icon: new URL('@/assets/jellyfin-logo.svg', import.meta.url).href,
     iframe: true,
   },
   ovrsr: {
-    title: 'Overseerr',
-    link: 'overseerr.pjarek.com',
-    icon: new URL('@/assets/overseerr-logo-full.svg', import.meta.url).href,
+    title: 'Jellyseerr',
+    link: 'jellyseerr.pjarek.com',
+    icon: new URL('@/assets/jellyseerr-logo.svg', import.meta.url).href,
     iframe: true,
   },
   msgs: {
