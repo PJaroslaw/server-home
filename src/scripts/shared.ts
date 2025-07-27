@@ -18,10 +18,10 @@ export const links = {
     iframe: true,
   },
   msgs: {
-    title: 'Messenger',
-    link: 'facebook.com/messages/t/',
-    icon: new URL('@/assets/messenger-logo.svg', import.meta.url).href,
-    iframe: false,
+    title: 'Dockage',
+    link: 'dockage.pjarek.com',
+    icon: new URL('@/assets/dockage-logo.svg', import.meta.url).href,
+    iframe: true,
   },
   rdr: {
     title: 'Radarr',
@@ -42,9 +42,9 @@ export const links = {
     iframe: true,
   },
   trns: {
-    title: 'Transmission',
-    link: 'pjarek.com/transmission',
-    icon: new URL('@/assets/transmission-logo.svg', import.meta.url).href,
-    iframe: true,
+    title: 'qBittorrent',
+    link: 'qbittorrent.pjarek.com',
+    icon: new URL('@/assets/qbittorrent-logo.svg', import.meta.url).href,
+    iframe: false,
   },
 }
