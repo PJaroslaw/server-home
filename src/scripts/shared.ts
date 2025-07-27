@@ -45,6 +45,6 @@ export const links = {
     title: 'qBittorrent',
     link: 'qbittorrent.pjarek.com',
     icon: new URL('@/assets/qbittorrent-logo.svg', import.meta.url).href,
-    iframe: true,
+    iframe: false,
   },
 }
