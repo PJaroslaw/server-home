@@ -18,9 +18,9 @@ export const links = {
     iframe: true,
   },
   msgs: {
-    title: 'Dockage',
-    link: 'dockage.pjarek.com',
-    icon: new URL('@/assets/dockage-logo.svg', import.meta.url).href,
+    title: 'Dockge',
+    link: 'dockge.pjarek.com',
+    icon: new URL('@/assets/dockge-logo.svg', import.meta.url).href,
     iframe: true,
   },
   rdr: {
