@@ -1,0 +1,14 @@
+services:
+  home-server:
+    container_name: home-server
+    image: pjarek-web/nodejs-server-home:latest
+    restart: unless-stopped
+    ports:
+      - 8080:80
+  it-tools:
+    image: corentinth/it-tools:latest
+    ports:
+      - 8089:80
+    restart: unless-stopped
+    container_name: it-tools
+networks: {}
