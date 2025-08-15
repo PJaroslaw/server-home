@@ -1,0 +1,10 @@
+services:
+  nginx:
+    container_name: nginx
+    image: jc21/nginx-proxy-manager:latest
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /srv/docker/nginx/data:/data
+      - /srv/docker/nginx/letsencrypt:/etc/letsencrypt
+networks: {}
