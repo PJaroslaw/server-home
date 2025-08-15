@@ -1,0 +1,135 @@
+services:
+  jellyseerr:
+    image: fallenbagel/jellyseerr:2.5.1
+    container_name: jellyseerr
+    environment:
+      - LOG_LEVEL=debug
+      - PORT=5055
+    ports:
+      - 5055:5055
+    volumes:
+      - /srv/docker/jellyseerr/config:/app/config
+    restart: unless-stopped
+    env_file:
+      - .env
+  flaresolverr:
+    container_name: flaresolverr
+    ports:
+      - 8191:8191
+    environment:
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    env_file:
+      - .env
+  sonarr:
+    image: linuxserver/sonarr:latest
+    container_name: sonarr
+    hostname: sonarr
+    volumes:
+      - ${ARRPATH}Sonarr/config:/config
+      - ${ARRPATH}Sonarr/backup:/data/Backup
+      - ${ARRPATH}Sonarr/tvshows:/data/tvshows
+      - ${ARRPATH}Downloads:/downloads
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+    env_file:
+      - .env
+  radarr:
+    image: linuxserver/radarr:latest
+    container_name: radarr
+    hostname: radarr
+    volumes:
+      - ${ARRPATH}Radarr/config:/config
+      - ${ARRPATH}Radarr/movies:/data/movies
+      - ${ARRPATH}Radarr/backup:/data/Backup
+      - ${ARRPATH}Downloads:/downloads
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+    env_file:
+      - .env
+  radarr4k:
+    image: linuxserver/radarr:latest
+    container_name: radarr4k
+    hostname: radarr4k
+    volumes:
+      - ${ARRPATH}Radarr4k/config:/config
+      - ${ARRPATH}Radarr4k/movies:/data/movies
+      - ${ARRPATH}Radarr4k/backup:/data/Backup
+      - ${ARRPATH}Downloads:/downloads
+    ports:
+      - 7879:7878
+    restart: unless-stopped
+    env_file:
+      - .env
+  prowlarr:
+    image: linuxserver/prowlarr:latest
+    container_name: prowlarr
+    hostname: prowlarr
+    volumes:
+      - ${ARRPATH}Prowlarr/config:/config
+      - ${ARRPATH}Prowlarr/backup:/data/Backup
+      - ${ARRPATH}Downloads:/downloads
+    ports:
+      - 9696:9696
+    restart: unless-stopped
+    env_file:
+      - .env
+  jellyfin:
+    image: linuxserver/jellyfin
+    container_name: jellyfin
+    ports:
+      - 8096:8096/tcp # Jellyfin web interface
+      - 7359:7359/udp # Network discovery
+      - 1900:1900/udp # DLNA port
+    volumes:
+      - ${ARRPATH}Jellyfin/config:/config
+      - ${ARRPATH}MoviesMerged:/data/movies
+      - ${ARRPATH}Sonarr/tvshows:/data/TVShows
+      - ${ARRPATH}Lidarr/music:/data/Music
+    restart: unless-stopped
+    runtime: nvidia
+    depends_on:
+      - mergerfs
+    env_file:
+      - .env
+  mergerfs:
+    image: ghcr.io/hotio/mergerfs:latest
+    container_name: mergerfs
+    network_mode: none
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    security_opt:
+      - apparmor:unconfined
+    restart: unless-stopped
+    volumes:
+      - ${ARRPATH}Radarr/movies:/movies_hd:rw
+      - ${ARRPATH}Radarr4k/movies:/movies_4k:rw
+      - ${ARRPATH}MoviesMerged:/movies:shared
+    command: -o allow_other,nonempty,category.create=ff /movies_hd:/movies_4k /movies
+  qbittorrent:
+    image: linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    hostname: qbittorrent
+    restart: unless-stopped
+    labels:
+      - com.centurylinklabs.watchtower.enable=false
+    volumes:
+      - ${ARRPATH}qbittorrent/config:/config
+      - ${ARRPATH}Downloads:/downloads
+    ports:
+      - 8088:8080
+      - 6881:6881
+      - 6881:6881/udp
+    environment:
+      - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881
+    healthcheck:
+      start_period: 15s
+    env_file:
+      - .env
+networks: {}
