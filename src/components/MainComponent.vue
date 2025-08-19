@@ -61,8 +61,8 @@
                 </div> -->
         <div id="wojtek-tab-pane" class="tab-pane fade show active">
           <div class="p-3 row row-cols-2 g-4 container mx-auto">
-            <template v-for="link in links" :key="link">
-              <Card :link="link" @cardClick="e => onCardClick(e)" />
+            <template v-for="card in cards" :key="card">
+              <Card :card="card" @cardClick="e => onCardClick(e)" />
             </template>
           </div>
         </div>
@@ -80,7 +80,7 @@
 import { onMounted, ref } from 'vue';
 // import MyServer from './MyServer.vue';
 import Card from './CardComponent.vue';
-import { links } from '@/scripts/shared';
+import { cards } from '@/scripts/shared';
 
 //Refs
 const theme = ref();

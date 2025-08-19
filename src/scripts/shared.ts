@@ -1,4 +1,13 @@
-export const links = [
+interface Link {
+  title: string;
+  link: string;
+  icon: string;
+  iframe: boolean
+}
+
+export type CardItem = Link[];
+
+export const cards: CardItem[] = [
   [
     {
       title: 'itTools',

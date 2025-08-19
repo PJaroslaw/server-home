@@ -1,11 +1,11 @@
 <template>
   <div class="col">
     <div class="card rounded-4 bg-dark border-0 overflow-hidden">
-      <div class="d-flex justify-content-center">
-        <template v-for="el in link" :key="el">
-          <div @click="open(el.iframe, el.link)"
-            style="cursor: pointer;" :title="el.title">
-            <img height="150" :src="`${el.icon}`" class="card-img p-3">
+      <div class="d-flex justify-content-center gap-3">
+        <template v-for="link in card" :key="link">
+          <div @click="open(link.iframe, link.link)"
+            style="cursor: pointer;" :title="link.title">
+            <img height="150" :src="`${link.icon}`" class="card-img p-3">
           </div>
         </template>
       </div>
@@ -14,11 +14,11 @@
 </template>
 
 <script setup lang="ts">
-
+import type { CardItem } from '@/scripts/shared';
 //Props
-defineProps({
-  link: { type: Array<{title: string, link: string; icon: string; iframe: boolean}>, required: true }
-});
+defineProps<{
+  card: CardItem
+}>();
 
 //Emits
 const emits = defineEmits(['cardClick']);
