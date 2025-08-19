@@ -1,8 +1,14 @@
 <template>
   <div class="col">
-    <div class="card rounded-4 bg-dark border-0 overflow-hidden" @click="open(link.iframe, link.link)"
-      style="cursor: pointer;" :title="link.title">
-      <img height="150" :src="`${link.icon}`" class="card-img p-3">
+    <div class="card rounded-4 bg-dark border-0 overflow-hidden">
+      <div class="d-flex justify-content-center">
+        <template v-for="el in link" :key="el">
+          <div @click="open(el.iframe, el.link)"
+            style="cursor: pointer;" :title="el.title">
+            <img height="150" :src="`${el.icon}`" class="card-img p-3">
+          </div>
+        </template>
+      </div>
     </div>
   </div>
 </template>
@@ -11,7 +17,7 @@
 
 //Props
 defineProps({
-  link: { type: Object, required: true }
+  link: { type: Array<{title: string, link: string; icon: string; iframe: boolean}>, required: true }
 });
 
 //Emits

@@ -69,7 +69,7 @@
       </main>
       <div v-show="showIframe" class="h-100 m-2">
         <button class="btn-close position-absolute end-0 me-3 mt-2 p-2 border border-2 rounded-pill z-3"
-          title="Close Iframe" @click="showIframe = false"></button>
+          title="Close Iframe" @click="closeIframe()"></button>
         <iframe :src="iframeSrc" frameborder="0" class="h-100 w-100 rounded-3"></iframe>
       </div>
     </div>
@@ -105,6 +105,11 @@ const onCardClick = (e: CardEvent) => {
   } else {
     window.open(e.link, '_blank');
   }
+}
+
+const closeIframe = () => {
+  showIframe.value = false;
+  iframeSrc.value = 'about:blank'
 }
 
 //Mounted
