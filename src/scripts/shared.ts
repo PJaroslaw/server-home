@@ -1,11 +1,11 @@
 interface Link {
-  title: string;
-  link: string;
-  icon: string;
+  title: string
+  link: string
+  icon: string
   iframe: boolean
 }
 
-export type CardItem = Link[];
+export type CardItem = Link[]
 
 export const cards: CardItem[] = [
   [
@@ -34,9 +34,9 @@ export const cards: CardItem[] = [
   ],
   [
     {
-      title: 'Dockge',
-      link: 'dockge.pjarek.com',
-      icon: new URL('@/assets/dockge-logo.svg', import.meta.url).href,
+      title: 'Jellystat',
+      link: 'jellystat.pjarek.com',
+      icon: new URL('@/assets/jellystat-logo.svg', import.meta.url).href,
       iframe: true,
     },
   ],
@@ -59,6 +59,14 @@ export const cards: CardItem[] = [
       title: 'Sonarr',
       link: 'pjarek.com/sonarr',
       icon: new URL('@/assets/sonarr-logo.svg', import.meta.url).href,
+      iframe: true,
+    },
+  ],
+  [
+    {
+      title: 'Dockge',
+      link: 'dockge.pjarek.com',
+      icon: new URL('@/assets/dockge-logo.svg', import.meta.url).href,
       iframe: true,
     },
   ],

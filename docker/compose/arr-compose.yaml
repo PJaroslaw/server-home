@@ -88,6 +88,7 @@ services:
       - ${ARRPATH}Jellyfin/config:/config
       - ${ARRPATH}MoviesMerged:/data/movies
       - ${ARRPATH}Sonarr/tvshows:/data/TVShows
+      - ${ARRPATH}Janitorr/leaving-soon:/data/leaving-soon
       - ${ARRPATH}Lidarr/music:/data/Music
     restart: unless-stopped
     runtime: nvidia
@@ -132,4 +133,44 @@ services:
       start_period: 15s
     env_file:
       - .env
+  jellystat-db:
+    image: postgres:15.2
+    shm_size: 1gb
+    container_name: jellystat-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pjarek
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - ${ARRPATH}Jellystat/postgres/data:/var/lib/postgresql/data
+  jellystat:
+    image: cyfershepard/jellystat:latest
+    container_name: jellystat
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pjarek
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_IP: jellystat-db
+      POSTGRES_PORT: 5432
+      JWT_SECRET: my-secret-jwt-key
+    volumes:
+      - ${ARRPATH}Jellystat/jellystat-backup-data:/app/backend/backup-data
+    ports:
+      - 3009:3000
+    depends_on:
+      - jellystat-db
+  janitorr:
+    container_name: janitorr
+    image: ghcr.io/schaka/janitorr:stable
+    volumes:
+      - ${ARRPATH}Janitorr/config/application.yml:/workspace/application.yml
+      - ${ARRPATH}Janitorr/logs:/logs
+      - ${ARRPATH}Janitorr:/data
+      - ${ARRPATH}MoviesMerged:/data/movies
+      - ${ARRPATH}Sonarr/tvshows:/data/tvshows
+    healthcheck:
+      test: wget -T5 -qO- http://localhost:8081/health | grep UP || exit 1
+      start_period: 30s
+      interval: 5s
+      retries: 3
 networks: {}
