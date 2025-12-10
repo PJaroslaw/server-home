@@ -61,7 +61,7 @@
                 </div> -->
         <div id="wojtek-tab-pane" class="tab-pane fade show active">
           <div class="p-3 row row-cols-2 g-4 container mx-auto">
-            <template v-for="card in cards" :key="card">
+            <template v-for="(card, index) in cards" :key="index">
               <Card :card="card" @cardClick="e => onCardClick(e)" />
             </template>
           </div>
