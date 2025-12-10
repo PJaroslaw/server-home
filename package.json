@@ -44,7 +44,7 @@
     "svgo": "^4.0.0",
     "typescript": "~5.9.3",
     "vite": "^6.4.1",
-    "vite-plugin-image-optimizer": "^1.1.8",
+    "vite-plugin-image-optimizer": "^2.0.3",
     "vite-plugin-vue-devtools": "^7.7.1",
     "vitest": "^4.0.15",
     "vue-tsc": "^2.2.0"
