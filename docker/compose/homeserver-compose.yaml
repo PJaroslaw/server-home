@@ -1,7 +1,7 @@
 services:
   home-server:
     container_name: home-server
-    image: pjarek-web/nodejs-server-home:latest
+    image: ghcr.io/pjaroslaw/server-home:main
     restart: unless-stopped
     ports:
       - 8080:80
