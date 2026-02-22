@@ -26,9 +26,9 @@ export const cards: CardItem[] = [
   ],
   [
     {
-      title: 'Jellyseerr',
-      link: 'jellyseerr.pjarek.com',
-      icon: new URL('@/assets/jellyseerr-logo.svg', import.meta.url).href,
+      title: 'Seerr',
+      link: 'seerr.pjarek.com',
+      icon: new URL('@/assets/seerr-logo.svg', import.meta.url).href,
       iframe: true,
     },
   ],
