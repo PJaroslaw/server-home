@@ -86,7 +86,7 @@ clients:
 
   jellyseerr:
     enabled: true
-    url: "http://jellyseerr:5055"
+    url: "http://seerr:5055"
     api-key: "api-key"
     match-server: false # Enable if you have several Radarr/Sonarr instances set up in Jellyseerr. Janitorr will match them by the host+port supplied in their respective config settings.
 
