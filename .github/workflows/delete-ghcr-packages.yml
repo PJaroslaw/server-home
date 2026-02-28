@@ -1,0 +1,20 @@
+name: Cleanup GHCR
+
+on:
+  schedule:
+    - cron: 0 1 * * Mon
+
+permissions:
+  packages: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Packages
+        uses: actions/delete-package-versions@e5bc658cc4c965c472efe991f8beea3981499c55 #v5.0.0
+        with:
+          package-name: server-home
+          package-type: container
+          min-versions-to-keep: 2
+          delete-only-untagged-versions: true
