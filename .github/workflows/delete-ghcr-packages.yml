@@ -20,4 +20,4 @@ jobs:
           package-name: server-home
           package-type: container
           min-versions-to-keep: 2
-          delete-only-pre-release-versions: true
+          delete-only-untagged-versions: true
