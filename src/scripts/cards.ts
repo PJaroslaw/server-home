@@ -46,13 +46,13 @@ export const adminCards: CardItem[] = [
   [
     {
       title: 'Radarr',
-      link: 'http://ubunutu00:7878',
+      link: 'https://radarr.humboldt-mountain.ts.net',
       icon: new URL('@/assets/radarr-logo.svg', import.meta.url).href,
       iframe: true,
     },
     {
       title: 'Radarr 4k',
-      link: 'http://ubunutu00:7879',
+      link: 'https://radarr4k.humboldt-mountain.ts.net',
       icon: new URL('@/assets/radarr-4k-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -60,7 +60,7 @@ export const adminCards: CardItem[] = [
   [
     {
       title: 'Sonarr',
-      link: 'http://ubunutu00:8989',
+      link: 'https://sonarr.humboldt-mountain.ts.net',
       icon: new URL('@/assets/sonarr-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -68,7 +68,7 @@ export const adminCards: CardItem[] = [
   [
     {
       title: 'Dockge',
-      link: 'http://ubunutu00:5001',
+      link: 'https://dockge.humboldt-mountain.ts.net',
       icon: new URL('@/assets/dockge-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -76,7 +76,7 @@ export const adminCards: CardItem[] = [
   [
     {
       title: 'Prowlarr',
-      link: 'http://ubunutu00:9696',
+      link: 'https://prowlarr.humboldt-mountain.ts.net',
       icon: new URL('@/assets/prowlarr-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -84,7 +84,7 @@ export const adminCards: CardItem[] = [
   [
     {
       title: 'qBittorrent',
-      link: 'http://ubunutu00:8088',
+      link: 'https://qbittorrent.humboldt-mountain.ts.net',
       icon: new URL('@/assets/qbittorrent-logo.svg', import.meta.url).href,
       iframe: false,
     },
