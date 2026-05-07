@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import type { CardItem } from '@/scripts/shared';
+import type { CardItem } from '@/scripts/cards';
 //Props
 defineProps<{
   card: CardItem
@@ -24,7 +24,7 @@ defineProps<{
 const emits = defineEmits(['cardClick']);
 
 const open = (iframe: boolean, link: string) => {
-  emits('cardClick', { iframe: iframe, link: `https://${link}` });
+  emits('cardClick', { iframe: iframe, link: `${link}` });
 }
 </script>
 

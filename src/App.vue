@@ -1,9 +1,7 @@
 <template>
-  <MyServer class="d-none" />
-  <MainComponent />
+  <RouterView />
 </template>
 
 <script setup lang="ts">
-import MyServer from './components/MyServer.vue';
-import MainComponent from './components/MainComponent.vue';
+import { RouterView } from 'vue-router';
 </script>

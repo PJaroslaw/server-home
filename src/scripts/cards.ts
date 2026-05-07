@@ -7,11 +7,11 @@ interface Link {
 
 export type CardItem = Link[]
 
-export const cards: CardItem[] = [
+export const homeCards: CardItem[] = [
   [
     {
       title: 'itTools',
-      link: 'it-tools.pjarek.com',
+      link: 'https://it-tools.pjarek.com',
       icon: new URL('@/assets/it-tools-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -19,7 +19,7 @@ export const cards: CardItem[] = [
   [
     {
       title: 'Jellyfin',
-      link: 'jellyfin.pjarek.com',
+      link: 'https://jellyfin.pjarek.com',
       icon: new URL('@/assets/jellyfin-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -27,7 +27,7 @@ export const cards: CardItem[] = [
   [
     {
       title: 'Seerr',
-      link: 'seerr.pjarek.com',
+      link: 'https://seerr.pjarek.com',
       icon: new URL('@/assets/seerr-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -35,21 +35,24 @@ export const cards: CardItem[] = [
   [
     {
       title: 'Jellystat',
-      link: 'jellystat.pjarek.com',
+      link: 'https://jellystat.pjarek.com',
       icon: new URL('@/assets/jellystat-logo.svg', import.meta.url).href,
       iframe: true,
     },
   ],
+]
+
+export const adminCards: CardItem[] = [
   [
     {
       title: 'Radarr',
-      link: 'pjarek.com/radarr',
+      link: 'http://ubunutu00:7878',
       icon: new URL('@/assets/radarr-logo.svg', import.meta.url).href,
       iframe: true,
     },
     {
       title: 'Radarr 4k',
-      link: 'pjarek.com/radarr4k',
+      link: 'http://ubunutu00:7879',
       icon: new URL('@/assets/radarr-4k-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -57,7 +60,7 @@ export const cards: CardItem[] = [
   [
     {
       title: 'Sonarr',
-      link: 'pjarek.com/sonarr',
+      link: 'http://ubunutu00:8989',
       icon: new URL('@/assets/sonarr-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -65,7 +68,7 @@ export const cards: CardItem[] = [
   [
     {
       title: 'Dockge',
-      link: 'dockge.pjarek.com',
+      link: 'http://ubunutu00:5001',
       icon: new URL('@/assets/dockge-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -73,7 +76,7 @@ export const cards: CardItem[] = [
   [
     {
       title: 'Prowlarr',
-      link: 'pjarek.com/prowlarr',
+      link: 'http://ubunutu00:9696',
       icon: new URL('@/assets/prowlarr-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -81,7 +84,7 @@ export const cards: CardItem[] = [
   [
     {
       title: 'qBittorrent',
-      link: 'qbittorrent.pjarek.com',
+      link: 'http://ubunutu00:8088',
       icon: new URL('@/assets/qbittorrent-logo.svg', import.meta.url).href,
       iframe: false,
     },

@@ -8,11 +8,9 @@
           <span class="fw-bold">Pjarek</span>
         </h3>
         <nav class="nav nav-underline">
-          <!-- <button class="nav-link fw-bold py-1 active text-body-emphasis" id="jarek-tab"  data-bs-toggle="tab" data-bs-target="#jarek-tab-pane">Jarek</button> -->
-          <!-- <button class="nav-link fw-bold py-1 text-body-emphasis"        id="wojtek-tab" data-bs-toggle="tab" data-bs-target="#wojtek-tab-pane">Main</button> -->
-          <!-- <button class="btn btn-sm btn-light rounded-pill" title="Change Theme" @click="changeTheme">
-                        {{ theme === 'dark' ? 'Sun' : 'Moon'}}
-                    </button> -->
+          <button class="btn btn-sm btn-outline-secondary rounded-pill me-3" @click="switchSite">
+            Go to {{ switchLabel }}
+          </button>
           <div class="align-self-center" title="Change Theme" @click="changeTheme" style="cursor: pointer;">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25"
               height="25" viewBox="0 0 256 256" xml:space="preserve">
@@ -54,11 +52,6 @@
       </header>
 
       <main v-show="!showIframe" class="tab-content overflow-auto h-100 bg-body-secondary">
-        <!-- <div id="jarek-tab-pane" class="tab-pane fade show active">
-                    <div class="p-3">
-                        <MyServer/>
-                    </div>
-                </div> -->
         <div id="wojtek-tab-pane" class="tab-pane fade show active">
           <div class="p-3 row row-cols-2 g-4 container mx-auto">
             <template v-for="(card, index) in cards" :key="index">
@@ -78,20 +71,42 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-// import MyServer from './MyServer.vue';
 import Card from './CardComponent.vue';
-import { cards } from '@/scripts/shared';
+import { homeCards } from '@/scripts/cards';
+import type { CardItem } from '@/scripts/cards';
+
+withDefaults(defineProps<{
+  cards?: CardItem[]
+}>(), {
+  cards: () => homeCards,
+});
 
 //Refs
 const theme = ref();
 const iframeSrc = ref();
 const showIframe = ref(false);
+const isAdminHost = /^admin\./i.test(window.location.hostname);
+const switchLabel = isAdminHost ? 'Main' : 'Admin';
 
 //Helper Methods
 const changeTheme = () => {
   const elem: HTMLHtmlElement | null = document.querySelector('html');
   theme.value = theme.value === 'dark' ? 'light' : 'dark';
   elem?.setAttribute('data-bs-theme', theme.value);
+}
+
+const switchSite = () => {
+  const { protocol, hostname, port } = window.location;
+  let nextHostname = hostname;
+
+  if (isAdminHost) {
+    nextHostname = hostname.replace(/^admin\./i, '');
+  } else {
+    nextHostname = `admin.${hostname}`;
+  }
+
+  const portPart = port ? `:${port}` : '';
+  window.location.href = `${protocol}//${nextHostname}${portPart}/`;
 }
 
 type CardEvent = {
