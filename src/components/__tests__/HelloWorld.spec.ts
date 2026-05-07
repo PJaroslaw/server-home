@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-describe('HelloWorld', () => {
+describe('Page Rendering', () => {
   it('should render without crashing', () => {
     expect(true).toBe(true)
   })
