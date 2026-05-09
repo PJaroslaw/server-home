@@ -46,13 +46,13 @@ export const adminCards: CardItem[] = [
   [
     {
       title: 'Radarr',
-      link: 'https://radarr.humboldt-mountain.ts.net',
+      link: 'https://pjarek.com/radarr',
       icon: new URL('@/assets/radarr-logo.svg', import.meta.url).href,
       iframe: true,
     },
     {
       title: 'Radarr 4k',
-      link: 'https://radarr4k.humboldt-mountain.ts.net',
+      link: 'https://pjarek.com/radarr4k',
       icon: new URL('@/assets/radarr-4k-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -60,7 +60,7 @@ export const adminCards: CardItem[] = [
   [
     {
       title: 'Sonarr',
-      link: 'https://sonarr.humboldt-mountain.ts.net',
+      link: 'https://pjarek.com/sonarr',
       icon: new URL('@/assets/sonarr-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -68,7 +68,7 @@ export const adminCards: CardItem[] = [
   [
     {
       title: 'Dockge',
-      link: 'https://dockge.humboldt-mountain.ts.net',
+      link: 'https://dockge.pjarek.com',
       icon: new URL('@/assets/dockge-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -76,7 +76,7 @@ export const adminCards: CardItem[] = [
   [
     {
       title: 'Prowlarr',
-      link: 'https://prowlarr.humboldt-mountain.ts.net',
+      link: 'https://pjarek.com/prowlarr',
       icon: new URL('@/assets/prowlarr-logo.svg', import.meta.url).href,
       iframe: true,
     },
@@ -84,9 +84,17 @@ export const adminCards: CardItem[] = [
   [
     {
       title: 'qBittorrent',
-      link: 'https://qbittorrent.humboldt-mountain.ts.net',
+      link: 'https://pjarek.com/qbittorrent',
       icon: new URL('@/assets/qbittorrent-logo.svg', import.meta.url).href,
-      iframe: false,
+      iframe: true,
     },
   ],
+  [
+    {
+      title: 'Nginx Proxy Manager',
+      link: 'https://nginx.pjarek.com',
+      icon: new URL('@/assets/nginx-logo.svg', import.meta.url).href,
+      iframe: true,
+    }
+  ]
 ]

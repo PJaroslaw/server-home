@@ -74,6 +74,7 @@ import { onMounted, ref } from 'vue';
 import Card from './CardComponent.vue';
 import { homeCards } from '@/scripts/cards';
 import type { CardItem } from '@/scripts/cards';
+import router from '@/router';
 
 withDefaults(defineProps<{
   cards?: CardItem[]
@@ -85,8 +86,8 @@ withDefaults(defineProps<{
 const theme = ref();
 const iframeSrc = ref();
 const showIframe = ref(false);
-const isAdminHost = /^admin\./i.test(window.location.hostname);
-const switchLabel = isAdminHost ? 'Main' : 'Admin';
+const currentPath = router.currentRoute.value.path;
+const switchLabel = currentPath === '/admin' ? 'Main' : 'Admin';
 
 //Helper Methods
 const changeTheme = () => {
@@ -96,17 +97,7 @@ const changeTheme = () => {
 }
 
 const switchSite = () => {
-  const { protocol, hostname, port } = window.location;
-  let nextHostname = hostname;
-
-  if (isAdminHost) {
-    nextHostname = hostname.replace(/^admin\./i, '');
-  } else {
-    nextHostname = `admin.${hostname}`;
-  }
-
-  const portPart = port ? `:${port}` : '';
-  window.location.href = `${protocol}//${nextHostname}${portPart}/`;
+  router.push(currentPath === '/admin' ? '/' : '/admin');
 }
 
 type CardEvent = {
