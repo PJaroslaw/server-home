@@ -9,7 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     open-pull-requests-limit: 10
     groups:
-      patch:
+      patch-minor:
         update-types:
           - "patch"
           - "minor"
