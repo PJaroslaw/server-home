@@ -12,11 +12,16 @@ updates:
       patch:
         update-types:
           - "patch"
+          - "minor"
     schedule:
       interval: "weekly"
 
   - package-ecosystem: "github-actions" # See documentation for possible values
     directory: "/" # Location of package manifests
+    groups:
+      docker:
+        patterns:
+          - "docker*"
     schedule:
       interval: "weekly"
 
