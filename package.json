@@ -36,7 +36,7 @@
     "eslint": "^10.7.0",
     "eslint-plugin-vue": "^10.10.0",
     "jiti": "^2.7.0",
-    "jsdom": "^29.1.1",
+    "jsdom": "^30.0.1",
     "npm-run-all2": "^9.0.2",
     "postcss": "^8.5.22",
     "prettier": "^3.9.6",
