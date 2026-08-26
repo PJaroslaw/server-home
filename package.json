@@ -33,20 +33,20 @@
     "@vue/test-utils": "^2.4.11",
     "@vue/tsconfig": "^0.9.1",
     "autoprefixer": "^10.5.4",
-    "eslint": "^10.8.1",
+    "eslint": "^10.9.0",
     "eslint-plugin-vue": "^10.10.0",
     "jiti": "^2.7.0",
     "jsdom": "^30.0.1",
     "npm-run-all2": "^9.0.3",
     "postcss": "^8.5.26",
     "prettier": "^3.9.6",
-    "sass": "^1.102.0",
+    "sass": "^1.103.1",
     "svgo": "^4.0.2",
     "typescript": "~6.0.3",
-    "vite": "^8.2.1",
+    "vite": "^8.2.2",
     "vite-plugin-image-optimizer": "^2.0.3",
     "vite-plugin-vue-devtools": "^8.2.1",
-    "vitest": "^4.1.10",
-    "vue-tsc": "^3.3.10"
+    "vitest": "^4.1.11",
+    "vue-tsc": "^3.3.11"
   }
 }
