@@ -91,6 +91,14 @@ export const adminCards: CardItem[] = [
   ],
   [
     {
+      title: 'Listenarr',
+      link: 'https://listenarr.pjarek.com',
+      icon: new URL('@/assets/listenarr-logo.svg', import.meta.url).href,
+      iframe: true,
+    }
+  ],
+  [
+    {
       title: 'Nginx Proxy Manager',
       link: 'https://nginx.pjarek.com',
       icon: new URL('@/assets/nginx-logo.svg', import.meta.url).href,
