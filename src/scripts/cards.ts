@@ -34,6 +34,14 @@ export const homeCards: CardItem[] = [
   ],
   [
     {
+      title: 'Audiobookshelf',
+      link: 'https://pjarek.com/audiobookshelf',
+      icon: new URL('@/assets/audiobookshelf-logo.svg', import.meta.url).href,
+      iframe: true,
+    },
+  ],
+  [
+    {
       title: 'Jellystat',
       link: 'https://jellystat.pjarek.com',
       icon: new URL('@/assets/jellystat-logo.svg', import.meta.url).href,
