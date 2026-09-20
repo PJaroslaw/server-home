@@ -42,15 +42,23 @@ export const homeCards: CardItem[] = [
   ],
   [
     {
-      title: 'Jellystat',
-      link: 'https://jellystat.pjarek.com',
-      icon: new URL('@/assets/jellystat-logo.svg', import.meta.url).href,
+      title: 'Wger',
+      link: 'https://wger.pjarek.com',
+      icon: new URL('@/assets/wger-logo.svg', import.meta.url).href,
       iframe: true,
     },
   ],
 ]
 
 export const adminCards: CardItem[] = [
+  [
+    {
+      title: 'Jellystat',
+      link: 'https://jellystat.pjarek.com',
+      icon: new URL('@/assets/jellystat-logo.svg', import.meta.url).href,
+      iframe: true,
+    },
+  ],
   [
     {
       title: 'Radarr',
