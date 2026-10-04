@@ -42,9 +42,9 @@ export const homeCards: CardItem[] = [
   ],
   [
     {
-      title: 'Wger',
-      link: 'https://wger.pjarek.com',
-      icon: new URL('@/assets/wger-logo.svg', import.meta.url).href,
+      title: 'Gymlog',
+      link: 'https://gymlog.pjarek.com',
+      icon: new URL('@/assets/gymlog-logo.svg', import.meta.url).href,
       iframe: true,
     },
   ],
